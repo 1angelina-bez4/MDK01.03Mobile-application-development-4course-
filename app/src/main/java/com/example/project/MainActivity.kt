@@ -13,6 +13,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.project.model.Post
+import com.example.project.model.Reactions
 import com.example.project.ui.theme.ProjectTheme
 
 class MainActivity : ComponentActivity() {
@@ -21,7 +23,19 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
            val postViewModel: PostViewModel = viewModel()
-            postViewModel.fetch()
+            val reactions = Reactions(
+                likes = 1,
+                dislikes = 3
+            )
+            val post = Post(
+                title = "Title",
+                body = "body",
+                reactions = reactions,
+                userId = 1
+            )
+
+            postViewModel.createPost(post)
+            //postViewModel.fetch()
         }
     }
 }
