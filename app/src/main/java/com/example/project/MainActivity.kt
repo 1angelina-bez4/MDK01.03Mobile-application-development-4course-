@@ -15,6 +15,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.project.model.Post
 import com.example.project.model.Reactions
+import com.example.project.model.Todos
 import com.example.project.ui.theme.ProjectTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,19 +23,15 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-           val postViewModel: PostViewModel = viewModel()
-            val reactions = Reactions(
-                likes = 1,
-                dislikes = 3
-            )
-            val post = Post(
-                title = "Title",
-                body = "body",
-                reactions = reactions,
-                userId = 1
+           val todosViewModel: TodosViewModel  = viewModel()
+            val todos = Todos(
+                todo = "Пропылесосить ковер",
+                completed = false,
+                userId = 31
             )
 
-            postViewModel.createPost(post)
+            todosViewModel.createTodos(todos)
+            //postViewModel.createPost(post)
             //postViewModel.fetch()
         }
     }

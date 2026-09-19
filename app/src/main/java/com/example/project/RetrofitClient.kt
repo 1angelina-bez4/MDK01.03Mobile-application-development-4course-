@@ -1,6 +1,7 @@
 package com.example.project
 
 import com.example.project.service.PostInterface
+import com.example.project.service.TodosInterface
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -30,4 +31,5 @@ object RetrofitClient {
         .build()
 
     val retrofitAPI: PostInterface = retrofit.create(PostInterface::class.java)
+    val todosAPI: TodosInterface  = retrofit.create(TodosInterface::class.java)
 }
