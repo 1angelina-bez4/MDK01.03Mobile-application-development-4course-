@@ -1,9 +1,10 @@
-package com.example.project
+package com.example.project.ui.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.project.model.Todos
+import com.example.project.data.RetrofitClient
+import com.example.project.data.model.Todos
 import kotlinx.coroutines.launch
 
 class TodosViewModel: ViewModel() {
@@ -12,7 +13,7 @@ class TodosViewModel: ViewModel() {
         viewModelScope.launch {
             try {
                 val todos = RetrofitClient.todosAPI.addTodos(todos)
-                Log.d("TodosViewModel", "${todos.id}\n${todos.todo}\n${todos.completed}\n${todos.userId}\n")
+                Log.d("TodosViewModel", "${todos.id}\n${todos}\n${todos.completed}\n${todos.userId}\n")
 
             } catch (e: Exception)
             {

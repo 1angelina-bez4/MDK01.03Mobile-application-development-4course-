@@ -1,6 +1,6 @@
-package com.example.project.service
+package com.example.project.data.service
 
-import com.example.project.model.Todos
+import com.example.project.data.model.Todos
 import retrofit2.http.Body
 import retrofit2.http.POST
 

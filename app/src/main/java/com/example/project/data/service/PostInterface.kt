@@ -1,7 +1,7 @@
-package com.example.project.service
+package com.example.project.data.service
 
-import com.example.project.model.Post
-import com.example.project.model.PostResponse
+import com.example.project.data.model.Post
+import com.example.project.data.model.PostResponse
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST

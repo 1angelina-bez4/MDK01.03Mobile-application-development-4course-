@@ -4,34 +4,30 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.project.model.Post
-import com.example.project.model.Reactions
-import com.example.project.model.Todos
+import com.example.project.data.model.Todos
 import com.example.project.ui.theme.ProjectTheme
+import com.example.project.ui.viewmodel.PostViewModel
+import com.example.project.ui.viewmodel.TodosViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-           val todosViewModel: TodosViewModel  = viewModel()
-            val todos = Todos(
+            val postViewModel: PostViewModel = viewModel()
+            val todosViewModel: TodosViewModel = viewModel()
+            val todo = Todos(
                 todo = "Пропылесосить ковер",
                 completed = false,
                 userId = 31
             )
 
-            todosViewModel.createTodos(todos)
-            //postViewModel.createPost(post)
+           todosViewModel.createTodos(todo)
             //postViewModel.fetch()
         }
     }

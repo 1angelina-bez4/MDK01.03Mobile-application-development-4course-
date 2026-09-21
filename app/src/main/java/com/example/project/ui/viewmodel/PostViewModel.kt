@@ -1,10 +1,11 @@
-package com.example.project
+package com.example.project.ui.viewmodel
 
-import android.content.ContentValues.TAG
+import android.content.ContentValues
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.project.model.Post
+import com.example.project.data.RetrofitClient
+import com.example.project.data.model.Post
 import kotlinx.coroutines.launch
 
 class PostViewModel: ViewModel() {
@@ -21,7 +22,7 @@ class PostViewModel: ViewModel() {
 
             } catch (e: Exception)
             {
-                Log.e(TAG,"${e.message}", e)
+                Log.e(ContentValues.TAG,"${e.message}", e)
             }
         }
     }
@@ -36,7 +37,7 @@ class PostViewModel: ViewModel() {
 
             } catch (e: Exception)
             {
-                Log.e(TAG,"${e.message}", e)
+                Log.e(ContentValues.TAG,"${e.message}", e)
             }
         }
     }

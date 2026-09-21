@@ -1,4 +1,4 @@
-package com.example.project.model
+package com.example.project.data.model
 
 data class Todos(
     val id: Int? = null,

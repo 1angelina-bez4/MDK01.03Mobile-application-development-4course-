@@ -1,4 +1,4 @@
-package com.example.project.model
+package com.example.project.data.model
 
 data class Post(
     val id: Int? = null,
