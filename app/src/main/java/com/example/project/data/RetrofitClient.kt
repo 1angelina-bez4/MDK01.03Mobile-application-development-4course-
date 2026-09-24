@@ -1,7 +1,8 @@
 package com.example.project.data
 
 import com.example.project.data.service.PostInterface
-import com.example.project.data.service.TodosInterface
+import com.example.project.data.service.ProductInterface
+import com.example.project.data.service.TodoInterface
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -30,5 +31,7 @@ object RetrofitClient {
         .build()
 
     val retrofitAPI: PostInterface = retrofit.create(PostInterface::class.java)
-    val todosAPI: TodosInterface = retrofit.create(TodosInterface::class.java)
+    val todoAPI: TodoInterface = retrofit.create(TodoInterface::class.java)
+
+    val productAPI: ProductInterface = retrofit.create(ProductInterface::class.java)
 }

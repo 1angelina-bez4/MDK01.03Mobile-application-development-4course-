@@ -1,6 +1,6 @@
 package com.example.project.data.model
 
-data class Todos(
+data class Todo(
     val id: Int? = null,
     val todo: String,
     val completed: Boolean,

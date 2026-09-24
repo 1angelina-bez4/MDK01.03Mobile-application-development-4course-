@@ -9,10 +9,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.project.data.model.Todos
+import com.example.project.data.model.Todo
 import com.example.project.ui.theme.ProjectTheme
 import com.example.project.ui.viewmodel.PostViewModel
-import com.example.project.ui.viewmodel.TodosViewModel
+import com.example.project.ui.viewmodel.TodoViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,14 +20,14 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             val postViewModel: PostViewModel = viewModel()
-            val todosViewModel: TodosViewModel = viewModel()
-            val todo = Todos(
+            val todoViewModel: TodoViewModel = viewModel()
+            val todo = Todo(
                 todo = "Пропылесосить ковер",
                 completed = false,
                 userId = 31
             )
 
-           todosViewModel.createTodos(todo)
+            todoViewModel.createTodos(todo)
             //postViewModel.fetch()
         }
     }

@@ -1,5 +1,7 @@
 package com.example.project.data.model
 
+import  com.example.project.data.model.Reactions
+
 data class Post(
     val id: Int? = null,
     val title: String,

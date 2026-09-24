@@ -4,16 +4,16 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.project.data.RetrofitClient
-import com.example.project.data.model.Todos
+import com.example.project.data.model.Todo
 import kotlinx.coroutines.launch
 
-class TodosViewModel: ViewModel() {
+class TodoViewModel: ViewModel() {
 
-    fun createTodos(todos: Todos){
+    fun createTodos(todo: Todo){
         viewModelScope.launch {
             try {
-                val todos = RetrofitClient.todosAPI.addTodos(todos)
-                Log.d("TodosViewModel", "${todos.id}\n${todos}\n${todos.completed}\n${todos.userId}\n")
+                val todo = RetrofitClient.todoAPI.addTodo(todo)
+                Log.d("TodosViewModel", "${todo.id}\n${todo.todo}\n${todo.completed}\n${todo.userId}\n")
 
             } catch (e: Exception)
             {
