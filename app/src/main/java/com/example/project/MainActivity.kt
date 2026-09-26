@@ -21,28 +21,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-//            val postViewModel: PostViewModel = viewModel()
-//            val todoViewModel: TodoViewModel = viewModel()
-//            val todo = Todo(
-//                todo = "Пропылесосить ковер",
-//                completed = false,
-//                userId = 31
-//            )
-            //todoViewModel.createTodos(todo)
-            //postViewModel.fetch()
-
             val productViewModel: ProductViewModel = viewModel()
-            val tags = listOf("Наушники", "bluetooth","шумоподавление", "беспроводные наушники", "гаджеты")
-            val product = Product(
-                id = 48,
-                title = "Беспроводные наушники SoundWave Pro",
-                description = "Наушники с активным шумоподавлением, влагозащитой IPX4 и автономностью до 30 часов работы вместе с кейсом",
-                category = "Аудиотехника",
-                tags = tags
-
-            )
-            productViewModel.fetch(id = 48)
-            productViewModel.updateProduct(id = 48,product)
+            productViewModel.updateProduct()
 
         }
     }
