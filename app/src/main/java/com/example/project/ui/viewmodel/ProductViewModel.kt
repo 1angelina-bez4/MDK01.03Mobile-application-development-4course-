@@ -15,7 +15,7 @@ class ProductViewModel: ViewModel() {
         viewModelScope.launch {
             try {
                 val product = RetrofitClient.productAPI.getProducts(48)
-                    Log.d("ProductViewModel", "${product.id}\n$" +
+                Log.d("ProductViewModel", "${product.id}\n$" +
                             "${product.title}\n${product.description}\n" +
                             "${product.category}\n${product.tags}")
 
@@ -41,5 +41,23 @@ class ProductViewModel: ViewModel() {
             }
         }
     }
+
+    fun deleteProduct(id:Int){
+        viewModelScope.launch {
+            try {
+                val product = RetrofitClient.productAPI.deletedProduct(id)
+                Log.d("ProductViewModel", "${product.id}\n$" +
+                        "${product.title}\n${product.description}\n" +
+                        "${product.category}\n${product.tags}\n" +
+                        "${product.isDeleted}")
+
+            }catch (e: Exception)
+            {
+                Log.e("ProductViewModel","${e.message}", e)
+            }
+        }
+
+    }
+
 
 }

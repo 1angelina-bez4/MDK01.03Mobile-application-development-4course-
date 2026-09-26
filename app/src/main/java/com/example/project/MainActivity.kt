@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             val productViewModel: ProductViewModel = viewModel()
-            productViewModel.updateProduct()
+            productViewModel.deleteProduct(25)
 
         }
     }

@@ -14,5 +14,6 @@ data class Product(
     val title: String,
     val description: String,
     val category: String,
-    val tags: List<String>? = null
+    val tags: List<String>? = null,
+    val isDeleted: Boolean = false
 )
