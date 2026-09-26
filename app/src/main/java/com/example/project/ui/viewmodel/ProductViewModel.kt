@@ -28,6 +28,7 @@ class ProductViewModel: ViewModel() {
                 )
 
                 if(newProduct.id !=null){
+                    val newProduct = RetrofitClient.productAPI.updateProduct(newProduct.id,newProduct)
                     Log.d("ProductViewModel", "После редактирования")
                     Log.d("ProductViewModel", "${newProduct.id}\n$" +
                             "${newProduct.title}\n${newProduct.description}\n" +
